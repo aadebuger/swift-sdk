@@ -78,6 +78,7 @@ class RESTClient {
     /// Signature of each request.
     static var signature: String {
         let timestamp = String(format: "%.0f", 1000 * Date().timeIntervalSince1970)
+        print(timestamp)
         let hash = (timestamp + Configuration.sharedInstance.applicationKey).md5String.lowercased()
 
         return "\(hash),\(timestamp)"
